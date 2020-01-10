@@ -1,0 +1,67 @@
+// color
+$primary-color: #1CABE2;
+$secondary-color: #374EA2;
+
+$primary-color-alt: #40B2D8;
+$secondary-color-alt: #3A7DA2;
+
+$grey-color: #9D9D9D;
+$gray-color-light: #D9D9D9;
+$grey-color-dark: #565656;
+$grey-color-dark-1: #333333;
+
+$default-color : #777779;
+$text-dark :#2D2926;
+$text-light-color : #DBD1C9;
+
+$purple-color : #6A1E74;
+$red-dark: #961A49;
+$red-color: #E2231A;
+$orange-color: #F26A21;
+$yellow-color: #FFC20E;
+$green-color: #80BD41;
+$green: #00833D;
+$background-color: #f2f2f2;
+
+$white: #ffffff;
+$black: #000000;
+
+$success-color: #5AC3AA;
+$error-color: #f85359;
+
+// grid
+$screen-xxs: 320px;
+$screen-xs: 414px;
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xlg: 1200px;
+$screen-xxlg: 1440px;
+
+$screen-xs-up: ($screen-sm - 1px);
+$screen-sm-up: ($screen-md - 1px);
+$screen-md-up: ($screen-lg - 1px);
+$screen-hd-up: ($screen-xxlg - 1px);
+
+//typo
+$font-size-base: 16px;
+$font-thin: 100;
+$font-light: 300;
+$font-normal: 400;
+$font-medium: 500;
+$font-semi-bold: 600;
+$font-bold: 700;
+$font-extra-bold: 900;
+
+$font-primary: 'Comfortaa', -apple-system, 'BlinkMacSystemFont', 'Segoe UI',
+  'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol';
+$font-fontback: sans-serif;
+$font-UniversLight : 'Univers-Light', 'Arial',  sans-serif;
+$font-UniversRoman : 'Univers LT Std', 'Arial', sans-serif;
+$font-UniversBold : 'Univers-Bold', 'Arial', sans-serif;
+
+$code-facebook: #4367B2;
+$code-twitter: #0084b4;
+$code-linkedin: #007AB9;
+$code-instagram: #000000;

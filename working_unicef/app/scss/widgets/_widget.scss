@@ -1,0 +1,41 @@
+.widget {
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .heading {
+    font-size: rem(36px);
+    line-height: 40px;
+  }
+
+  .desc {
+    font-size: rem(16px);
+    font-weight: $font-bold;
+    line-height: 1.75;
+    margin-bottom: 40px;
+
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+}
+
+@include desktop-up {
+  .widget {
+    .container {
+      padding: 0 15px;
+    }
+
+    .heading {
+      font-size: rem(54px);
+      line-height: 60px;
+      word-spacing: 100vw;
+      margin-bottom: 0;
+    }
+
+  }
+}

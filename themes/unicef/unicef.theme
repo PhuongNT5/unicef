@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Stable theme.
+ */
+
+use Drupal\Component\Utility\Html;
+
+/**
+ * Implements HOOK for block().
+ */
+function brayleinosplash_preprocess_block(array &$variables) {
+
+  // Load the site name out of configuration.
+  $config = \Drupal::config('system.site');
+  $variables['site_name'] = $config->get('name');
+  $variables['site_logo'] = theme_get_setting('logo.url');
+  $variables['site_slogan'] = $config->get('slogan');
+
+}

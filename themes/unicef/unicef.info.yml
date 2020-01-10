@@ -1,0 +1,12 @@
+name: unicef
+type: theme
+description: 'A cuddly theme that offers extra fluffiness.'
+core: 8.x
+libraries:
+  - unicef/global-styling
+  - unicef/global-scripts
+base theme: classy
+regions:
+  header: Header
+  content: Content
+  footer: Footer

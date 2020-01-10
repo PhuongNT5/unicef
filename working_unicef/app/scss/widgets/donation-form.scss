@@ -1,0 +1,179 @@
+.donation-form {
+  .radio-group {
+    // animation: fadeOut 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    label {
+      font-size: rem(18px);
+      font-family: $font-UniversRoman;
+      display: block;
+      cursor: pointer;
+      position: relative;
+      margin-bottom: 12px;
+
+      .label-text {
+        font-weight: bold;
+        margin-left: 20px;
+      }
+
+      input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+
+      }
+
+      input[type="radio"]:checked~.check-mark:after {
+        display: block;
+      }
+
+      .check-mark {
+        position: absolute;
+        top: 6px;
+        left: 0;
+        height: 15px;
+        width: 15px;
+        background-color: $white;
+        border-radius: 50%;
+
+        &:after {
+          top: 4px;
+          left: 4px;
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: $orange-color;
+          position: absolute;
+          content: '';
+          display: none;
+        }
+
+      }
+
+
+    }
+
+    &__content {
+      font-size: rem(13px);
+      margin-bottom: 20px;
+      display: none;
+      transition: all 1s;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &.active {
+      .radio-group__content {
+        display: block;
+        // animation: fadeIn 0.3s ease-in-out;
+      }
+
+      .rmother {
+        display: block;
+      }
+      .radio-group-input::after {
+        display: block;
+      }
+    }
+    &-input {
+      display: inline-flex;
+      flex-wrap: wrap;
+      .rmother {
+        background-color: $primary-color;
+        border: none;
+        border-bottom: 1px solid $white;
+        margin-left: 10px;
+        max-width: 110px;
+        padding: 0 6px 0 30px;
+        display: none;
+        margin-bottom: 12px;
+        position: relative;
+        &::placeholder {
+          color: $white;
+        }
+      }
+      &::after {
+        position: absolute;
+        left: 150px;
+        top: 1px;
+        content: 'RM';
+        pointer-events: none;
+        display: none;
+      }
+      .error {
+        font-size: 14px;
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+        display: block;
+      }
+    }
+  }
+
+  .donate-note {
+    margin-top: 20px;
+    position: relative;
+    padding-left: 20px;
+    font-size: rem(9px);
+
+    &:before {
+      content: '\f05a';
+      font-family: 'FontAwesome';
+      font-size: rem(11px);
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: $white;
+    }
+  }
+}
+.bls-modal {
+  .donation-form .radio-group-input .rmother {
+    max-width: 80px;
+  }
+}
+
+@include desktop-up {
+  .donation-form .radio-group label #rmother {
+    max-width: max-content;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    height: 0px;
+  }
+  25% {
+    height: 60px;
+  }
+  50% {
+    height: 120px;
+  }
+  75% {
+    height: 160px;
+  }
+  100% {
+    height: auto;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    height: auto;
+  }
+  25% {
+    height: 160px;
+  }
+  50% {
+    height: 120px;
+  }
+  75% {
+    height: 60px;
+  }
+  100% {
+    height: 0px;
+  }
+}

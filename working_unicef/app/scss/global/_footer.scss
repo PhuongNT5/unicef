@@ -1,0 +1,39 @@
+footer {
+  background-color: $primary-color;
+  .unicef-footer {
+    padding: 20px 0;
+    .unicef-info {
+      p.copy-right {
+        margin-bottom: 0;
+        font-size: rem(11px);
+        color: $white;
+      }
+    }
+    .footer-nav {
+      justify-content: flex-start;
+      align-items: flex-end;
+      height: 100%;
+      padding-top: 10px;
+      &__item {
+        color: $white;
+        font-size: rem(13px);
+        padding-right: 20px;
+      }
+    }
+  }
+}
+@include desktop-up {
+  footer {
+    .unicef-footer {
+      position: relative;
+      .footer-nav {
+        justify-content: flex-end;
+        padding-right: 80px;
+        padding-top: 0;
+        &__item {
+          padding: 0 20px;
+        }
+      }
+    }
+  }
+}

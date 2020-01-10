@@ -1,0 +1,41 @@
+header {
+  height: 48px;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: $primary-color;
+  .container {
+    height: 100%;
+  }
+  .unicef-header {
+    align-items: center;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    .text-right {
+      color: $white;
+      position: absolute;
+      right: 0;
+    }
+    .logo {
+      img {
+        max-width: 120px;
+      }
+    }
+  }
+
+}
+@include desktop-up {
+  header {
+    height: 80px;
+    .unicef-header {
+      .logo {
+        img {
+          max-width: inherit;
+        }
+      }
+    }
+  }
+}

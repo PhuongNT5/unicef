@@ -1,0 +1,118 @@
+html {
+  font-size: 16px;
+}
+
+html,
+body {
+  font-family: $font-UniversRoman;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  color: $default-color;
+  font-weight: $font-light;
+  .wf-active & {
+    font-family: $font-primary;
+    font-weight: $font-normal;
+  }
+}
+/* hot fix BLSWR-89 */
+html:not(.menu-opened) {
+  overflow: auto !important;
+  body {
+    overflow: auto !important;
+  }
+}
+
+a,
+button,
+input,
+select,
+textarea, 
+.form-control {
+  &:active,
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  &::-ms-clear {
+    display: none;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: $primary-color-alt;
+
+  &:hover,
+  &:focus {
+    color: $secondary-color-alt;
+  }
+}
+
+.invisible-title {
+  visibility: hidden;
+  position: absolute;
+  top: -1000px;
+  left: 0;
+  opacity: 0;
+}
+
+.fa {
+
+  &-linkedin,
+  &-linkedin-square {
+    color: $code-linkedin;
+  }
+
+  &-instagram {
+    color: $code-instagram;
+  }
+
+  &-facebook,
+  &-facebook-square {
+    color: $code-facebook;
+  }
+}
+section {
+  &.main {
+    z-index: 101;
+  }
+  &.content {
+    margin-top: 80px;
+  }
+}
+.container {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+@media (max-width: 1440px) and (min-width: 1280px) {
+  .container {
+    max-width: 1080px;
+  }
+}
+@media screen and (min-width: $screen-lg) and (max-width: $screen-xlg){
+  section {
+    &.content {
+      margin-top: 212px;
+    }
+  }
+}
+@include desktop-up {
+  section {
+    &.main.fixed {
+      position: static;
+    }
+  }
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (max-width: 374px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Theme override for a field.
+ *
+ *
+ *
+ * @see template_preprocess_field()
+ */
+#}
+<div class="banner-carousel">
+  <ul class="bls-carousel__slider" data-bls-carousel="data-bls-carousel" data-bls-carousel-autoinstall="data-bls-carousel-autoinstall">
+    {% for item in items %}
+      {{ item.content }}
+    {% endfor %}
+  </ul>
+</div>

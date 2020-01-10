@@ -1,0 +1,403 @@
+.form-donate {
+  padding: 60px 0;
+  h2 {
+    font-size: rem(28px);
+    color: $default-color;
+    font-family: $font-UniversRoman;
+    font-weight: $font-light;
+    margin-bottom: 0;
+  }
+  .form-row {
+    margin-right: -5px;
+    margin-left: -5px;
+    .label-message {
+      font-family: $font-UniversRoman;
+      font-weight: $font-normal;
+    }
+    .form-check {
+      padding: 0 15px 0 35px;
+    }
+    .form-group {
+      display: block;
+      label {
+        font-size: rem(12px);
+        font-weight: $font-semi-bold;
+        font-family: $font-UniversRoman;
+      }
+      .form-control {
+        font-size: rem(13px);
+        border-radius: 3px;
+        border-color: rgba($color: #707070, $alpha: 0.5) ;
+        height: 42px;
+        &::placeholder {
+          color: #c6c6c6;
+        }
+      }
+      select {
+        ::-ms-expand {
+          display: none;
+        }
+        -moz-appearance: none;
+        -webkit-appearance: none;
+      }
+      .bls-options {
+        max-height: 200px;
+        overflow: auto;
+      }
+      .btn-select {
+        border: none;
+        // position: inherit;
+        border: none;
+        position: absolute;
+        right: 20px;
+        left: 0;
+        top: 0;
+        &:after {
+          content: "\f0d7";
+          color: $orange-color;
+          bottom: 18px;
+          right: 10px;
+        }
+      }
+      .bls-select-text {
+        color: $default-color;
+        font-size: rem(13px);
+        padding-bottom: 0;
+        padding-left: 20px;
+        display: flex;
+        align-items: center;
+        text-transform: inherit;
+        font-weight: normal;
+      }
+      .invalid+.error {
+        padding: 15px 0;
+        font-size: rem(11px);
+        color: $red-color;
+      }
+      &.form-donate__type--group {
+        display: inline-flex;
+        justify-content: center;
+        height: inherit;
+      }
+    }
+  }
+
+
+  &__type {
+    &--label {
+      font-family: $font-UniversRoman;
+      font-weight: $font-semi-bold;
+      font-size: rem(18px);
+    }
+    &--group {
+      margin: auto;
+      margin-bottom: 0;
+    }
+    &--value {
+      font-size: rem(17px);
+      padding: 10px 17px;
+      border: 1px solid $primary-color;
+      border-radius: 4px;
+      margin-right: 4px;
+      cursor: pointer;
+      flex: 1;
+      &:last-child {
+        flex: 4;
+      }
+      &.active {
+        color: $primary-color;
+      }
+    }
+    .form-row{ 
+      margin-bottom: 40px;
+      .form-group {
+        text-align: center;
+        margin-bottom: 0;
+        height: 66px;
+        .form-control {
+          font-size: rem(49px);
+          border-style: none;
+          border-bottom: 2px solid $primary-color;
+          position: relative;
+          color: $primary-color;
+        }
+        &.donate-value-input {
+          position: relative;
+          margin-bottom: 20px;
+          &::before {
+            content: 'RM';
+            z-index: 1;
+            content: "RM";
+            position: absolute;
+            left: 15px;
+            top: 0;
+            font-size: rem(36px);
+            color: #777779;
+          }
+          &.one-time {
+            &::after {
+              display: none;
+            }
+          }
+          &::after {
+            content: ' / month';
+            position: absolute;
+            right: 20px;
+            top: 0;
+            font-size: rem(36px);
+            color: $default-color;
+            z-index: 1;
+          }
+          input {
+            position: absolute;
+            left: auto;
+            bottom: 0;
+            height: 100%;
+            padding: 12px 15px 0 85px;
+            font-size: rem(36px);
+            @include desktop-down {
+              bottom: inherit;
+              height: 45px;
+              max-width: calc(100% - 15px) ;
+            }
+          }
+          .error {
+            position: absolute;
+            top: 100%;
+            margin-top: -30px;
+          }
+        }
+      }
+    }
+  }
+  &__personal {
+    p.mandatory {
+      font-size: rem(9px);
+      margin-bottom: 25px;
+    }
+    .form-row .form-group {
+      .number-phone {
+        flex-wrap: wrap;
+        &__plus {
+          font-size: 20px;
+          font-weight: 300;
+          margin-top: 5px;
+          // flex: 1;
+        }
+        &__id {
+          input {
+            padding-left: 6px;
+            padding-right: 6px;
+            &.invalid+.error {
+              padding-left: 0;
+              padding-bottom: 0;
+            }
+          }
+          margin-right: 6px;
+          position: relative;
+          margin-left: 6px;  
+          flex: 1;
+        }
+        &__contact {
+          flex: 3;
+          max-width: 60%;
+          input {
+            padding: 6px;
+            &.invalid+.error {
+              padding-left: 0;
+              padding-bottom: 0;
+            }
+          }
+          @media (max-width: 991px) and (min-width: 576px) {
+            flex: 5;
+          }
+        }
+
+        .invalid+.error {
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+          max-width: 100%;
+          padding-left: 20px;
+        }
+      }
+    }
+
+  }
+  &__receive, &__agree {
+    .form-check {
+      input[type="checkbox"], input[type="radio"]   {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        margin-right: -15px;
+      }
+  
+      input[type="checkbox"]:checked~.check-mark:after {
+        display: block;
+      }
+      .label-message {
+        font-size: rem(11px);
+      }
+      .check-mark {
+        position: absolute;
+        top: 4px;
+        left: 0;
+        height: 15px;
+        width: 15px;
+        background-color: $white;
+        border-radius: 50%;
+        border: 1px solid;
+        z-index: -1;
+        &:after {
+          top: 3px;
+          left: 3px;
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: $orange-color;
+          position: absolute;
+          content: '';
+          display: none;
+        }
+  
+      }
+    }
+    font-size: rem(13px);
+  }
+  &__agree {
+    .error {
+      font-size: 11px;
+      padding: 10px 0 15px;
+    }
+    .form-check {
+      &.invalid {
+        color: inherit;
+      }
+    }
+    .label-message {
+      font-size: rem(11px);
+    }
+  }
+  &__address {
+    display: none;
+    animation: fadeOut 0.3s ease-in-out;
+    &.active {
+      display: block;
+      // overflow: hidden;
+      position: relative;
+      animation: fadeIn 0.3s ease-in-out;
+
+    }
+  }
+}
+.safari, .mobile-safari, .tablet-safari {
+  .form-donate__type .form-row .form-group.donate-value-input input {
+    padding: 0 15px 0 85px;
+  }
+}
+@include desktop-up {
+  .form-donate {
+    &__type {
+      .form-row {
+        margin-right: -15px;
+        margin-left: -15px;
+        .form-group {
+          padding: 0 15px;
+          &.donate-value-input {
+            margin-bottom: 0;
+            &:before, &::after {
+              font-size: rem(49px);
+            }
+            input {
+              font-size: rem(49px);
+            }
+            .error {
+              margin-top: 0;
+            }
+          }
+          &.form-donate__type--group {
+            justify-content: flex-end;
+            align-items: flex-end;
+            padding-left: 60px;
+          }
+          .form-donate__type--value {
+            font-size: rem(18px);
+          }
+        }
+      }
+      &--value {
+        padding: 10px 20px;
+        margin-right: 8px;
+      }
+    }
+    &__personal {
+      max-width: 80%;
+      .form-row .form-group {
+        .number-phone {
+          &__id {
+            max-width: inherit;
+            flex: 3;
+            padding: 0;
+            input {
+              padding: 6px 12px;
+            }
+          }
+          &__contact {
+            flex: 8;
+            margin: 0;
+            padding: 0;
+            input {
+              padding: 6px 12px;
+            }
+          }
+        }
+      }
+    }
+    &__address {
+      max-width: 80%;
+    }
+    .bls-modal__instance {
+      min-width: 400px;
+      .bls-modal__body {
+        color: $grey-color-dark-1;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    height: 0px;
+  }
+  25% {
+    height: 60px;
+  }
+  50% {
+    height: 120px;
+  }
+  75% {
+    height: 160px;
+  }
+  100% {
+    height: auto;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    height: auto;
+  }
+  25% {
+    height: 160px;
+  }
+  50% {
+    height: 120px;
+  }
+  75% {
+    height: 60px;
+  }
+  100% {
+    height: 0px;
+  }
+}

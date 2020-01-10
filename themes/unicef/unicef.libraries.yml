@@ -1,0 +1,14 @@
+# ayer.libraries.yml
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      assets/css/common.css: {}
+      assets/css/main.css: {}
+
+global-scripts:
+  js:
+    assets/js/vendor.js: {}
+    assets/js/common.js: {}
+    assets/js/main.js: {}
+    assets/js/app.min.js: {}

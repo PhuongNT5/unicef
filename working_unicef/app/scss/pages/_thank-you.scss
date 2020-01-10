@@ -1,0 +1,222 @@
+.thankyou {
+  &-banner {
+    background-image: url('../../images/thankyou-banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 240px;
+  }
+  &-content {
+    h2{
+      font-family: $font-UniversRoman;
+      font-size: rem(28px);
+      font-weight: $font-light;
+      color: $default-color;
+      text-align: center;
+      width: 100%;
+      line-height: 1.2;
+      margin: 20px auto;
+      max-width: 85%;
+      @media (max-width: 374px) {
+        max-width: 90%;
+      }
+      span {
+        color: $primary-color;
+      }
+    }
+    &.one-time {
+      .thankyou-row {
+        .thankyou-row__detail {
+          .desc {
+            border-bottom: 1px solid rgba($default-color, $alpha: 0.5) ;
+          }
+        }
+      }
+    }
+  }
+  &-row {
+    display: block;
+    &__type {
+      text-align: center;
+      color: $default-color;
+      background: url('../../images/thank-you-type-bg.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      font-size: rem(13px);
+      font-family: $font-UniversRoman;
+      font-weight: $font-light;
+      padding: 40px 20px;
+      h4 {
+        font-size: rem(18px);
+        font-family: $font-UniversRoman;
+        font-weight: $font-semi-bold;
+      }
+      p {
+        margin-bottom: 0;
+      }
+    }
+    &__detail {
+      font-family: $font-UniversRoman;
+      font-size: rem(13px);
+      margin: 40px 0;
+      .desc {
+        padding-bottom: 20px;
+      }
+      
+    }
+  }
+  &-donation {
+    &__message {
+      h3 {
+        font-size: rem(18px);
+        font-family: $font-UniversRoman;
+        margin: 30px 0;
+        font-weight: $font-normal;
+      }
+      
+    }
+    &__cta {
+      .btn {
+        width: 140px;
+        margin: 0 15px 0 0;
+        @media (max-width: 475px) {
+          width: calc(50% - 8px);
+          margin: 0;
+          &:nth-child(2) {
+            margin-left: 12px;
+          }
+        }
+      }
+      &.one {
+        .btn { margin: 0; }
+      }
+    }
+    .bls-modal__instance {
+      width: 90%;
+    }
+    .bls-modal__instance.shown.center {
+      margin-bottom: 0;
+      border: 0;
+      border-radius: 0;
+    }
+    .bls-modal__body {
+      display: block;
+      position: relative;
+      margin-bottom: -7px;
+      .donation-form {
+        background-color: $primary-color;
+        padding: 20px;
+        color: $white;
+      }
+      .donation-intro {
+        text-align: left;
+        h2 {
+          text-align: left;
+          max-width: inherit;
+        }
+      }
+      .bls-btn__close {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 10px;
+        right: 10px;
+        &:before {
+          display: block;
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          content: '';
+          background:  url('../../images/close-icon.png') no-repeat;
+          
+        }
+      }
+    }
+   
+  }
+}
+@include desktop-up {
+  .thankyou {
+    &-banner {
+      background-image: url('../../images/thankyou-banner-desk.jpg');
+    }
+    &-content {
+      h2 {
+        width: auto;
+        margin: 40px 0 20px;
+        text-align: left;
+      }
+    }
+    &-row {
+      display: inline-block;
+      &__type {
+        width: 34%;
+        float: right;
+        transform: translateY(-70px);
+      }
+      &__detail { 
+        width: 50%;
+        float: left;
+        margin: 0;
+        margin-bottom: 100px; 
+      }
+    }
+    &-donation {
+      text-align: left;
+      &__message {
+        h3 {
+          max-width: 50%;
+          text-align: left;
+        }
+      }
+      &__cta {
+        justify-content: flex-start;
+        .btn {
+          margin-left: 0;
+        }
+      }
+      .bls-modal__instance {
+        width: 60%;
+      }
+      .bls-modal__body {
+        display: inline-block;
+        padding: 0;
+        .donation-form {
+          width: 40%;
+          float: left;
+        }
+        .donation-intro {
+          width: 60%;
+          float: right;
+          padding-left: 40px;
+          h2 {
+            font-size: rem(32px);
+          }
+          p {
+            font-size: rem(21px);
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1280px) {
+  .thankyou {
+    &-banner {
+      min-height: 320px;
+    }
+  }
+}
+@media (min-width: 1440px) {
+  .thankyou {
+    &-banner {
+      min-height: 380px;
+    }
+  }
+}
+@media (min-width: 1660px) {
+  .thankyou {
+    &-banner {
+      min-height: 440px;
+    }
+  }
+}

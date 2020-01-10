@@ -1,0 +1,236 @@
+.nav-main {
+
+  &__menu {
+    margin: 0 -20px;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__link {
+    display: block;
+    line-height: 22px;
+    padding: 18px 20px;
+    font-size: rem(16px);
+    font-weight: $font-bold;
+    color: $primary-color-alt;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+.nav-location {
+  margin: 0 -20px;
+  padding: 20px;
+
+  label {
+    font-size: rem(14px);
+    font-weight: $font-bold;
+    color: $grey-color;
+    margin: 0 0 20px;
+  }
+
+  &__menu {
+
+    .nav-location__item {
+      padding: 0;
+    }
+
+  }
+
+  &__link {
+    font-size: rem(14px);
+    font-weight: $font-bold;
+    color: $grey-color;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+
+    &:hover,
+    &:focus {
+      color: $grey-color-dark;
+      text-decoration: none;
+    }
+
+    .active & {
+      color: $grey-color-dark;
+    }
+  }
+}
+
+.bls-dropdown {
+
+  &__menu {
+
+    .nav-main__item {
+      padding: 0;
+    }
+
+    &.nav-location__menu {
+      position: relative;
+      margin: 0;
+      border-radius: 0;
+      border-color: $grey-color;
+      border-top: none;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+
+      li {
+        &:first-child,
+        &:last-child {
+          border-radius: 0;
+        }
+      }
+
+
+    }
+  }
+
+}
+
+@include desktop-up {
+  .nav-main {
+    align-self: flex-end;
+
+    &__menu {
+      display: flex;
+      margin: 0 10px 0 0;
+
+      .nav-main__item {
+
+        &:hover,
+        &:focus,
+        &.selected {
+          background: none;
+
+          a {
+            color: $secondary-color-alt;
+
+            &::after {
+              content: '';
+              display: block;
+              position: absolute;
+              bottom: -10px;
+              height: 3px;
+              left: 10px;
+              right: 10px;
+              background: $secondary-color-alt;
+            }
+          }
+        }
+      }
+    }
+
+    &__link {
+      padding: 0 10px;
+      line-height: 35px;
+      position: relative;
+    }
+  }
+
+  .nav-location {
+    margin: 0;
+    width: auto;
+    padding: 0;
+
+    .btn {
+      display: none;
+    }
+
+    &__menu {
+
+      li {
+        border-left: solid 1px $grey-color;
+
+        &:first-child {
+          border-left: none;
+        }
+
+        &.active {
+          a {
+            font-weight: $font-bold;
+          }
+        }
+      }
+
+      .nav-location__link {
+        font-size: rem(12px);
+        font-weight: 400;
+        padding: 0 20px;
+
+        &:hover,
+        &:focus {
+          background: none;
+        }
+
+      }
+    }
+  }
+
+  .bls-dropdown {
+
+    &.nav-location {
+      position: absolute;
+      padding: 20px 0;
+      align-self: flex-start;
+      top: 0;
+      right: 0;
+    }
+
+    &__menu {
+
+      &.nav-location__menu {
+        border: none;
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+        z-index: 1;
+        background: none;
+        top: 0;
+        margin: 0 -15px 0 0;
+
+        li {
+          &:hover,
+          &:focus,
+          &.selected {
+            background: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include lg-desktop-up {
+  .nav-main {
+
+    &__menu {
+      margin: 0 20px 0 0;
+
+      .nav-main__item {
+
+        &:hover,
+        &:focus,
+        &.selected {
+
+          a {
+
+            &::after {
+              left: 20px;
+              right: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    &__link {
+      padding: 0 20px;
+    }
+  }
+}

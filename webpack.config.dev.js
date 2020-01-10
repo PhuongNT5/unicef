@@ -1,0 +1,120 @@
+require('core-js/stable');
+require('regenerator-runtime/runtime');
+
+// const fs = require('fs');
+const path = require('path');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
+const glob = require('glob');
+const AutoPrefixer = require('autoprefixer');
+// const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+
+const entry = {
+  main: './working_brayleinosplash/app/scripts/project/main.js',
+  // development: './app/scripts/project/development.js',
+};
+
+const pages = glob
+  .sync('./app/scripts/project/pages/*.js')
+  .reduce((x, y) => Object.assign(x, {
+    [path.basename(y, '.js')]: y,
+  }), {});
+
+Object.assign(entry, pages);
+
+module.exports = {
+  mode: 'development',
+  entry,
+  output: {
+    path: path.resolve(__dirname, 'themes/brayleinosplash/'),
+    filename: '[name].js',
+  },
+  devServer: {
+    host: '0.0.0.0',
+    port: process.env.PORT || 3100,
+    contentBase: './working_brayleinosplash/',
+    watchContentBase: true,
+    // https: {
+    //   key: fs.readFileSync(path.resolve(__dirname, './cert/server.key')),
+    //   cert: fs.readFileSync(path.resolve(__dirname, './cert/server.cer')),
+    // },
+    watchOptions: {
+      ignored: ['test'],
+    },
+    allowedHosts: [
+      'bls-frontend.local',
+    ],
+  },
+  devtool: 'source-map',
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          {
+            loader: 'style-loader',
+            options: {
+              sourceMap: true,
+              hmr: true,
+            },
+          }, {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            },
+          }, {
+            loader: 'postcss-loader',
+            options: {
+              autoprefixer: {
+                browsers: ['last 2 versions'],
+              },
+              plugins: () => [
+                AutoPrefixer('last 2 versions', 'ie >= 10'),
+              ],
+            },
+          }, {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.pug$/,
+        use: [{
+          loader: 'pug-loader',
+          query: {
+            pretty: true,
+            self: true,
+            exports: false,
+          },
+        }],
+      },
+      {
+        test: /.(fonts.*).(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+          },
+        }],
+      },
+      {
+        test: /.(images.*).(png|jpe?g|gif|svg)$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+          },
+        }],
+      },
+    ],
+  },
+};

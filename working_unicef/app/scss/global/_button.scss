@@ -1,0 +1,157 @@
+.btn {
+  font-weight: $font-bold;
+  line-height: 1;
+  padding: 12px 30px;
+  font-size: rem(11px);
+  text-transform: uppercase;
+  border-radius: 2px;
+
+  &:focus,
+  &:hover,
+  &.focus {
+    outline-color: none;
+    box-shadow: none;
+    color: $white;
+  }
+
+  &.disabled {
+    opacity: 1;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &-orange {
+    background: $orange-color;
+    color: $white;
+    border: none;
+
+    // &:hover {
+    //   background: $white;
+    //   color: $orange-color;
+    //   border: 1px solid $orange-color;
+    // }
+  }
+  input {
+    &:hover, &:focus {
+      outline: none;
+      box-shadow: none;
+      color: $white;
+    }
+  }
+
+  &-blue {
+    background: $primary-color;
+    color: $white;
+    border: none;
+
+    // &:hover {
+    //   background: $white;
+    //   color: $primary-color;
+    //   border: 1px solid $primary-color;
+    // }
+  }
+  &-secondary {
+    background: $secondary-color;
+    color: $white;
+    border: none;
+    &:hover {
+      background: $secondary-color;
+    }
+  }
+
+  &-solid {
+
+    &--white {
+      background: $white;
+      color: $success-color;
+      border-radius: 2px;
+    }
+  }
+
+  &-select,
+  .bls-select &.btn-select {
+    appearance: none;
+    background: none;
+    border: none;
+    border-bottom: solid 2px $black;
+    padding: 0 40px 13px 0;
+    border-radius: 0;
+    font-size: rem(14px);
+    font-weight: $font-bold;
+    line-height: 15px;
+    // display: flex;
+    // justify-content: space-between;
+    // align-content: center;
+    text-align: left;
+    width: 100%;
+    position: relative;
+
+    &::after {
+      content: '\f107';
+      font: normal normal normal 27px/10px 'FontAwesome';
+      transition: all .3s ease;
+      transform-origin: center center;
+      border: none;
+      width: auto;
+      height: 10px;
+      right: 0;
+      top: auto;
+      bottom: 13px;
+      position: absolute;
+    }
+
+    &--gray {
+      border-bottom-color: $grey-color;
+      color: $grey-color-dark;
+    }
+
+    &--white {
+      border-bottom-color: $white;
+      color: $white;
+    }
+
+    &--green {
+      border-bottom-color: $success-color;
+      color: $success-color;
+    }
+
+    &.open {
+
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &-text {
+    background: none;
+    border: none;
+    border-radius: 0;
+    border-bottom: solid 3px $primary-color;
+    color: $primary-color;
+    line-height: 18px;
+    padding: 0 0 5px;
+
+    &--blue {
+      color: $secondary-color-alt;
+      border-color: $secondary-color-alt;
+    }
+
+    &--white {
+      color: $white;
+      border-color: $white;
+
+      &:hover,
+      &:focus {
+        color: $white;
+      }
+    }
+  }
+
+}
+a:not([href]):not([tabindex]), a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
+  color:$white;
+}
+a:not([href]):not([tabindex]) {
+  color: $white;
+}

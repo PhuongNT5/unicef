@@ -1,0 +1,29 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  color: $default-color;
+  font-family: $font-UniversRoman;
+  font-weight: $font-normal;
+}
+
+.d-mobile {
+  display: block;
+}
+
+.d-desktop {
+  display: none;
+}
+
+@include desktop-up {
+  body {
+    padding-top: 0;
+
+  }
+  .d-mobile {
+    display: none;
+  }
+  .d-desktop {
+    display: block;
+  }
+}

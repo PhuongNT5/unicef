@@ -1,0 +1,167 @@
+<section>
+  <div class="container">
+    <form class="form-donate form" id="form-donate" data-donate-validate data-bls-script="data-bls-script"
+    data-src="/themes/unicef/assets/js/widgets/form.js" method="POST" action='https://unicefint.brayleinosplash.com/api/unicef/CreateForm'>
+      <div class="form-donate__type">
+        <label class="form-donate__type--label" for="donateValue">You have selected a donation of</label>
+        <div class="form-row">
+          <div class="form-group donate-value-input col-12 col-lg-5">
+            <input class="form-control donateValue" id="donateValue" name="amount" value="120" type="text" maxlength="5" pattern="([5-8][0-9]|9[0-9]|[1-8][0-9]{2}|9[0-8][0-9]|99[0-9]|[1-8][0-9]{3}|9[0-8][0-9]{2}|99[0-8][0-9]|999[0-9]|[1-8][0-9]{4}|9[0-8][0-9]{3}|99[0-8][0-9]{2}|999[0-8][0-9]|9999[0-9])"
+              autocomplete="off" required="required" data-error-require="Invalid input, please try again." data-error-pattern="Invalid input, please try again."/>
+          </div>
+          <div class="form-group form-donate__type--group col-12 col-lg-7">
+            <label class="form-donate__type--value">70</label>
+            <label class="form-donate__type--value active">120</label>
+            <label class="form-donate__type--value">160</label>
+            <label class="form-donate__type--value">Other amount</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-donate__personal mb-4">
+        <h2>Personal Details
+          <p class="mandatory">*Mandatory fields</p>
+        </h2>
+        <div class="form-row">
+          <div class="form-group col-12 col-lg-3">
+            <label for="title">Title</label>
+            <select id="title" class="form-control" name="title" autocomplete="off" title="Select One" data-bls-selection title="Select One">
+              <option >Datuk</option>
+              <option>Datin</option>
+              <option>Tun</option>
+              <option>Tan Sri</option>
+              <option>Puan Sri</option>
+              <option>Dato</option>
+              <option>Dr.</option>              
+              <option>Mr.</option>
+              <option>Mrs.</option>
+              <option>Ms.</option>
+              <option>Madam</option>
+            </select>
+          </div>
+          <div class="form-group col-6 col-lg-3">
+            <label for="firstName">First Name*</label>
+            <input class="form-control" type="text" name="first_name" id="firstName" placeholder="Type here" required="required" data-error-require="This is a required field" pattern="^[A-Za-z\s]+$" data-error-pattern="Only alphabetic are allowed." autocomplete="off">
+          </div>
+          <div class="form-group col-6 col-lg-3">
+            <label for="familyName">Family Name</label>
+            <input class="form-control" type="text" name="family_name" id="familyName" placeholder="Type here" pattern="^[A-Za-z\s]+$" data-error-pattern="Only alphabetic are allowed." autocomplete="off">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-6 col-lg-3">
+            <label for="passport">I.C. / Passport No.*</label>
+            <input class="form-control" type="text" name="i_c_passport_no" id="passport" placeholder="Eg. 712345123456" autocomplete="off" maxlength="12" pattern="[a-zA-Z0-9\s]+" required="required" data-error-require="This is a required field" data-error-pattern="Only alphanumberic are allowed.">
+          </div>
+          <div class="form-group col-6 col-lg-3">
+            <label for="passport">Race</label>
+            <select id="race" class="form-control" name="race" autocomplete="off" data-bls-selection title="Select one">
+              <option >Chinese</option>
+              <option>Indian</option>
+              <option>Malay</option>
+              <option>Others</option>
+
+            </select>
+          </div>
+          <div class="form-group col-6 col-lg-3">
+            <label for="numberContact">Phone No.*</label>
+            <div class="number-phone d-flex">
+                <label class="number-phone__plus">+</label>
+                <div class="form-group number-phone__id">
+                  <input class="form-control" type="text" id="idContact" name="phone_id" placeholder="60" autocomplete="off" pattern="^[0-9]*$" maxlength="3" required="required" data-error-require="This is a required field" data-error-pattern="Only numeric is allowed.">
+                </div>
+                <div class="form-group number-phone__contact">
+                  <input class="form-control" type="text" id="numberContact" name="phone_no" placeholder="12345678" autocomplete="off" maxlength="10" pattern="^[0-9]*$" required="required" data-error-require="This is a required field" data-error-pattern="Only numeric is allowed.">
+                </div>
+            </div>
+          </div>
+          <div class="form-group col-6 col-lg-3">
+            <label for="email">Email Address*</label>
+            <input class="form-control" type="text" name="email" id="email_address" placeholder="Type here" required="required" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-z]{2,4}" data-error-require="This is a required field" autocomplete="off" data-error-pattern="Only standard email format is allowed, abc@xyz.com">
+          </div>
+        </div>
+        <div class="form-donate__receive mt-4">
+          <p>Please tick below if you’d like to receive the following materials from us:</p>
+          <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="receiveTax" id="receiveTax" checked>
+              <span class="check-mark"></span>
+            <label class="label-message receiveTax" for="receiveTax">I would like to receive my tax exemption receipt and exclusive donor gifts at my mailing address.</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-donate__address active">
+        <h2>Address</h2>
+        <div class="form-row">
+          <div class="form-group col-12 col-lg-6">
+            <label for="address1">Address Line 1*</label>
+            <input class="form-control" type="text" name="address1" id="mailing_address" placeholder="Type here" autocomplete="off" required="required" data-error-require="This is a required field">
+          </div>
+          <div class="form-group col-12 col-lg-6">
+            <label for="address2">Address Line 2</label>
+            <input class="form-control" type="text" name="address2" id="address2" placeholder="Type here" autocomplete="off" required="required" data-error-require="This is a required field">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-6 col-lg-3">
+            <label for="city">City</label>
+            <input class="form-control" type="text" id="city" name="city" placeholder="Type here" autocomplete="off">
+          </div>
+          <div class="form-group col-6 col-lg-3">
+            <label for="stateRegion">State / Province / Region*</label>
+            <select id="stateRegion" class="form-control" name="stateRegion" autocomplete="off" data-bls-selection required="required" data-error-require="This is a required field" title="Select One"> 
+              <option value="Brunei">Brunei</option>
+              <option value="Johor">Johor</option>
+              <option value="Kedah">Kedah</option>
+              <option value="Kelantan">Kelantan</option>
+              <option value="Kuala Lumpur" selected>Kuala Lumpur</option>
+              <option value="Labuan">Labuan</option>
+              <option value="Melaka">Melaka</option>
+              <option value="Negeri Sembilan">Negeri Sembilan</option>
+              <option value="Others">Others</option>
+              <option value="Pahang">Pahang</option>
+              <option value="Penang">Penang</option>
+              <option value="Perak">Perak</option>
+              <option value="Perlis">Perlis</option>
+              <option value="Putrajaya">Putrajaya</option>
+              <option value="Sabah">Sabah</option>
+              <option value="Sarawak">Sarawak</option>
+              <option value="Selangor">Selangor</option>
+              <option value="Singapore">Singapore</option>
+              <option value="Terengganu">Terengganu</option>
+            </select>
+          </div>
+          <div class="form-group col-6 col-lg-3">
+            <label for="postal">Postal Code*</label>
+            <input class="form-control" type="text" id="postal" name="postal" placeholder="Eg. 43000" autocomplete="off" pattern="^[0-9]*$" required="required" data-error-require="This is a required field" data-error-pattern="Only alphanumberic characters are allowed.">
+          </div>
+          <div class="form-group col-6 col-lg-3">
+            <label for="country">Country*</label>
+            <select id="country" class="form-control" name="country" autocomplete="off" data-bls-selection required="required" data-error-require="This is a required field" title="Select one">
+              <option value="Malaysia" selected>Malaysia</option>
+              <option value="Singapore">Singapore</option>
+              <option value="Thailand">Thailand</option>
+              <option value="Indonesia">Indonesia</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form-donate__agree mt-4">
+          <div class="col-12 form-check">
+              <input class="form-check-input" type="checkbox" checked name="agreeContact" id="agreeContact" required="required" data-error-require="This is a required field">
+              <span class="check-mark"></span>
+              <label class="label-message agreeContact" for="agreeContact">I agree that UNICEF may contact me via telephone and electronic communications (including e-mails and e-newsletters) for updates and/or fundraising purposes.</label>
+          </div>
+        </div>
+        <div class="text-left mt-4">
+            <a class="btn btn-orange btn-yes btn-submit pl-5 pr-5" href="#">NEXT</a>
+        </div>
+      <div class="bls-modal" id="form-result" data-form-result-modal data-target="#form-result">
+          <div class="bls-modal__instance">
+            <div class="bls-modal__body"></div>
+          </div>
+      </div>
+    </form>
+  </div>
+</section>
+<div class="container to-top">
+  <a href="#form-donate" class="btn btn-top"></a>
+</div>

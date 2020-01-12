@@ -15,6 +15,7 @@ function callApi(form, status) {
   }
   obj.form_name = obj.first_name + obj.family_name;
   obj.phone_no = obj.phone_id + obj.phone_no;
+  obj.donation_status = status;
   const callAjax = ajaxRequest({method: method, url:action, headers: {'Content-Type': 'application/json'}, body: JSON.stringify(obj)});
   callAjax.then((res) => {
     let result = JSON.parse(res);

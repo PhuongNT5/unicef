@@ -63,6 +63,6 @@
     "jsdom-global": "3.0.2",
     "regenerator-runtime": "^0.13.3",
     "smoothscroll-polyfill": "^0.4.4",
-    "ua-parser-js": "^0.7.20"
+    "ua-parser-js": "^0.7.24"
   }
 }
